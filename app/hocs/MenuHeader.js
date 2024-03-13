@@ -1,12 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  Platform,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {theme} from '../theme';
 import {
   fontSize,

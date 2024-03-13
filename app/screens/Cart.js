@@ -1,15 +1,14 @@
-import React, {useEffect} from 'react';
-import {LogBox, View} from 'react-native';
+import React from 'react';
+import {View} from 'react-native';
 import MenuHeader from '../hocs/MenuHeader';
 import {theme} from '../theme';
 import {fontSize, fontWeight} from '../theme/common-style';
 import {clearCart} from '../redux/reducers/cartSlice';
 import CartSection from '../hocs/CartSection';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 
 const Cart = props => {
   const dispatch = useDispatch();
-  const cart = useSelector(state => state.Cart.data);
   return (
     <>
       <MenuHeader
