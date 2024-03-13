@@ -24,7 +24,6 @@ const ProductDetails = props => {
         headerTitleSize={fontSize.title_30}
         headerTitleWeight={fontWeight[500]}
         backButton={true}
-        showTicker={true}
         backButtonColor={'white'}
         backButtonSize={25}
         onBackButtonPress={() => props.navigation.goBack()}
