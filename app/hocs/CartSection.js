@@ -11,7 +11,6 @@ import {theme} from '../theme';
 import InputButtons from './InputButtons';
 import {decrement, increment} from '../redux/reducers/cartSlice';
 import {numberWithCommas} from './NumberWithCommas';
-import {Toast} from 'react-native-toast-message/lib/src/Toast';
 import {screens} from '../config';
 import ProductImage from '../assets/images/productImage.png';
 
@@ -30,18 +29,7 @@ const CartSection = props => {
       dispatch(decrement(item));
     };
     const handlePlus = item => {
-      const index = cart?.findIndex(_e => _e.id === item.id);
-      if (cart[index].quantity < item?.stock) {
-        dispatch(increment(item));
-      } else {
-        Toast.show({
-          type: 'error',
-          text1: 'Product Limit Exceeds',
-          text2: 'Maximum quantity per order added. ',
-          autoHide: true,
-          visibilityTime: 2000,
-        });
-      }
+      dispatch(increment(item));
     };
 
     return (

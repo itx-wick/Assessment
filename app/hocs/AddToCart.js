@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {theme} from '../theme';
 import {screenWidth} from '../theme/common-style';
-import {useDispatch, useSelector} from 'react-redux';
 import {addItem, decrement, increment} from '../redux/reducers/cartSlice';
 import InputButtons from './InputButtons';
-import {Toast} from 'react-native-toast-message/lib/src/Toast';
 import AddToCartButton from './AddToCartButton';
+import {useDispatch, useSelector} from 'react-redux';
 
 const AddToCart = props => {
   const dispatch = useDispatch();
@@ -46,17 +45,7 @@ const AddToCart = props => {
   const handleIncrement = item => {
     try {
       const index = cart?.findIndex(_e => _e?.id === item?.id);
-      if (cart[index].quantity < item?.stock) {
-        dispatch(increment(item));
-      } else {
-        Toast.show({
-          type: 'error',
-          text1: 'Product Limit Exceeds',
-          text2: 'Maximum quantity per order added. ',
-          autoHide: true,
-          visibilityTime: 2000,
-        });
-      }
+      dispatch(increment(item));
     } catch (error) {
       console.log('===error', error);
     }

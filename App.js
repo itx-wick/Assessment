@@ -11,12 +11,10 @@ import {
 } from 'react-native';
 import AppNavigator from './app/navigation/root-stack';
 import {persistor, store} from './app/redux/store';
-import Toast from 'react-native-toast-message';
 import {theme} from './app/theme';
 
 const App = () => {
   const navigationRef = React.createRef();
-
   React.useEffect(() => {
     LogBox.ignoreAllLogs();
   }, []);
@@ -46,7 +44,6 @@ const App = () => {
               }>
               <AppNavigator />
             </NavigationContainer>
-            <Toast ref={ref => Toast.setRef(ref)} topOffset={60} />
           </View>
         </PersistGate>
       </Provider>
